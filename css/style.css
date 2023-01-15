@@ -1,0 +1,37 @@
+@import url(fonts.css);
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --not-black: #323232;
+    --card-bg: #E1E1E1;
+    --line: #E5E5E5;
+    --banner-bg: linear-gradient(0deg, rgba(50, 50, 50, 0.7), rgba(50, 50, 50, 0.7));
+    --montserrat-r: 'Montserrat_Regular';
+    --montserrat-b: 'Montserrat_Bold';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    user-select: none;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
