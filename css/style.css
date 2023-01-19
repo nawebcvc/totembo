@@ -4,8 +4,12 @@
     --white: #fff;
     --black: #000;
     --not-black: #323232;
+    --body-bg: #F1F1F1;
     --card-bg: #E1E1E1;
     --line: #E5E5E5;
+    --chart-menu: #32323252;
+    --circle-bg: #9b9b9b14;
+    --circle-hover: #a3a3a385;
     --banner-bg: linear-gradient(0deg, rgba(50, 50, 50, 0.7), rgba(50, 50, 50, 0.7));
     --montserrat-r: 'Montserrat_Regular';
     --montserrat-b: 'Montserrat_Bold';
@@ -19,6 +23,8 @@
 
 body {
     user-select: none;
+    background: var(--body-bg);
+    position: relative;
 }
 
 ul {
@@ -30,8 +36,246 @@ a {
 }
 
 .container {
-    max-width: 1400px;
+    max-width: 1340px;
     width: 100%;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+.nav .container{
+    display: flex;
+    padding: 50px 20px 20px;
+}
+
+.nav::after {
+    content: '' ;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 1320px;
+    width: 100%;
+    height: 2px;
+    background: var(--black);
+    border-radius: 0.5px;
+}
+
+.nav__logo-title {
+    margin-right: 50px;
+    font-family: var(--montserrat-b);
+    font-size: 32px;
+    line-height: 23px;
+    text-transform: uppercase;
+    color: var(--not-black);
+}
+
+.nav__list {
+    display: flex;
+}
+
+.nav__link {
+    font-family: var(--montserrat-r);
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: capitalize;
+    color: var(--not-black);
+}
+
+.nav__links {
+    margin: 0 42px 0 0;
+    
+}
+
+.nav__links:nth-child(1) {
+    margin: 0 62px 0 0;
+}
+
+.nav__links:nth-child(4) {
+    margin: 0 19px 0 0;
+}
+
+.nav__links:nth-child(5) {
+    margin: 0 44px 0 0;
+}
+
+.nav__links:last-child {
+    margin: 0;
+}
+
+.nav__menu .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav__menu {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    height: 100vh;
+    width: 100%;
+}
+
+.nav__menu-chart {
+    width: 12em;
+    position: relative;
+}
+
+.nav__menu-chart:before {
+    content: "";
+    display: block;
+    padding-top: 240px;
+    z-index: -100;
+}
+
+
+.menu__chart-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 5px;
+    background: var(--line);
+    width: 55px;
+    height: 45px;
+    border: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-right: 10%;
+    transition: 500ms;
+} 
+
+.menu__chart-menu span {
+    height: 4px;
+    width: 43px;
+    background: var(--white);
+}
+
+.menu__chart-menu:focus {
+    background:var(--chart-menu);
+}
+
+.menu__chart-menu:focus~.menu__chart-triangle {
+    transition: 500ms;
+    transform-origin: center bottom;
+    width: 0px;
+    opacity: 1;
+    z-index: 100;
+}
+
+.menu__chart-triangle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0%;
+    bottom: 50%;
+    width: 170px;
+    transition: 500ms;
+    margin: 0 auto;
+    opacity: 0;
+    z-index: -100;
+}
+
+.triangle__circle {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: 80px;
+    background: var(--circle-bg);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    transform-origin: center bottom;
+    z-index: -99;
+    overflow: hidden;
+    margin-left: 60px; 
+    transition: 500ms;
+}
+
+.triangle__circle-link {
+    display: flex;
+}
+
+.circle__link-img {
+    width: 60px;
+    object-fit: contain;
+    transform: rotate(0deg);
+    z-index: 99;
+}
+
+.triangle__circle:after {
+    content: '';
+    position: absolute;
+    font-family: var(--montserrat-r);
+    font-size: 25px;
+    line-height: 24px;
+    color: var(--not-black);
+    z-index: 100;
+    transition: 500ms;
+    
+}
+
+.triangle__circle:hover {
+    transition: 500ms;
+    background: var(--circle-hover);
+    /* background: url(menu_produc-bg4.png);
+    4, 8 - красивый фон
+    к сожалению transition не работает при background-image */
+}
+
+.menu__chart-triangle:nth-child(2) .triangle__circle:hover::after {
+    content: 'Часы';
+    top: 105px;
+    right: -35px;
+}
+
+.menu__chart-triangle:nth-child(3) .triangle__circle:hover::after {
+    content: 'Кольца';
+    transition: 0ms;
+    transform: rotate(60deg);
+    top: 105px;
+    right: -50px;
+}
+
+.menu__chart-triangle:nth-child(4) .triangle__circle:hover::after {
+    transition: 0ms;
+    content: 'Серьги';
+    transform: rotate(120deg);
+    top: 108px;
+    right: -50px;
+}
+
+.menu__chart-triangle:nth-child(5) .triangle__circle:hover::after {
+    transition: 0ms;
+    content: 'Браслеты';
+    transform: rotate(180deg);
+    top: 111px;
+    right: -60px;
+}
+
+.menu__chart-triangle:nth-child(6) .triangle__circle:hover::after {
+    transition: 0ms;
+    content: 'Клатчи';
+    transform: rotate(240deg);
+    top: 108px;
+    right: -44px;
+}
+
+.menu__chart-triangle:nth-child(7) .triangle__circle:hover::after {
+    transition: 0ms;
+    content: 'Цепочки';
+    transform: rotate(300deg);
+    top: 108px;
+    right: -54px;
+}
+
+.nav__btns {
+    display: flex;
+    margin-left: auto;
+    column-gap: 40px;
 }

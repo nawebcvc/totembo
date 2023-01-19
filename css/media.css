@@ -2,6 +2,18 @@
     .container {
         max-width: 960px;
     }
+
+    .nav__list {
+        display: none;
+    }
+
+    .nav__link {
+        color: var(--white);
+    }
+
+    .nav__menu {
+        display: flex;
+    }
 }
 
 @media(max-width: 992px) {
@@ -19,6 +31,24 @@
 @media(max-width: 576px) {
     .container {
         max-width: 100%;
+    }
+
+    .nav .container {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        column-gap: 20px;
+        row-gap: 20px; 
+    }
+
+    .nav__logo-title, .nav__btns {
+        margin: 0;
+    }
+}
+
+@media(max-height: 500px) {
+    .nav__menu-chart {
+        top: 10%;
     }
 }
 
