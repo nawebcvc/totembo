@@ -42,13 +42,13 @@ a {
     padding: 0 20px;
 }
 
-.nav .container{
+.nav .container {
     display: flex;
     padding: 50px 20px 20px;
 }
 
 .nav::after {
-    content: '' ;
+    content: '';
     position: absolute;
     left: 0;
     right: 0;
@@ -60,7 +60,7 @@ a {
     border-radius: 0.5px;
 }
 
-.nav__logo-title {
+.nav__logo-title h1 {
     margin-right: 50px;
     font-family: var(--montserrat-b);
     font-size: 32px;
@@ -83,7 +83,7 @@ a {
 
 .nav__links {
     margin: 0 42px 0 0;
-    
+
 }
 
 .nav__links:nth-child(1) {
@@ -102,12 +102,6 @@ a {
     margin: 0;
 }
 
-.nav__menu .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .nav__menu {
     display: none;
     align-items: center;
@@ -120,6 +114,7 @@ a {
     margin: 0 auto;
     height: 100vh;
     width: 100%;
+    z-index: -1;
 }
 
 .nav__menu-chart {
@@ -136,7 +131,7 @@ a {
 
 
 .menu__chart-menu {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -150,7 +145,7 @@ a {
     right: 0;
     margin-right: 10%;
     transition: 500ms;
-} 
+}
 
 .menu__chart-menu span {
     height: 4px;
@@ -159,10 +154,14 @@ a {
 }
 
 .menu__chart-menu:focus {
-    background:var(--chart-menu);
+    background: var(--chart-menu);
 }
 
-.menu__chart-menu:focus~.menu__chart-triangle {
+.menu__chart-menu:focus .nav__menu {
+    z-index: 100;
+}
+
+.menu__chart-menu:focus~.nav__menu .nav__menu-chart .menu__chart-triangle {
     transition: 500ms;
     transform-origin: center bottom;
     width: 0px;
@@ -193,7 +192,7 @@ a {
     transform-origin: center bottom;
     z-index: -99;
     overflow: hidden;
-    margin-left: 60px; 
+    margin-left: 60px;
     transition: 500ms;
 }
 
@@ -217,24 +216,24 @@ a {
     color: var(--not-black);
     z-index: 100;
     transition: 500ms;
-    
+
 }
 
 .triangle__circle:hover {
     transition: 500ms;
     background: var(--circle-hover);
-    /* background: url(menu_produc-bg4.png);
+    /* background: url(menu_product-bg4.png);
     4, 8 - красивый фон
     к сожалению transition не работает при background-image */
 }
 
-.menu__chart-triangle:nth-child(2) .triangle__circle:hover::after {
+.menu__chart-triangle:nth-child(1) .triangle__circle:hover::after {
     content: 'Часы';
     top: 105px;
     right: -35px;
 }
 
-.menu__chart-triangle:nth-child(3) .triangle__circle:hover::after {
+.menu__chart-triangle:nth-child(2) .triangle__circle:hover::after {
     content: 'Кольца';
     transition: 0ms;
     transform: rotate(60deg);
@@ -242,7 +241,7 @@ a {
     right: -50px;
 }
 
-.menu__chart-triangle:nth-child(4) .triangle__circle:hover::after {
+.menu__chart-triangle:nth-child(3) .triangle__circle:hover::after {
     transition: 0ms;
     content: 'Серьги';
     transform: rotate(120deg);
@@ -250,7 +249,7 @@ a {
     right: -50px;
 }
 
-.menu__chart-triangle:nth-child(5) .triangle__circle:hover::after {
+.menu__chart-triangle:nth-child(4) .triangle__circle:hover::after {
     transition: 0ms;
     content: 'Браслеты';
     transform: rotate(180deg);
@@ -258,7 +257,7 @@ a {
     right: -60px;
 }
 
-.menu__chart-triangle:nth-child(6) .triangle__circle:hover::after {
+.menu__chart-triangle:nth-child(5) .triangle__circle:hover::after {
     transition: 0ms;
     content: 'Клатчи';
     transform: rotate(240deg);
@@ -266,7 +265,7 @@ a {
     right: -44px;
 }
 
-.menu__chart-triangle:nth-child(7) .triangle__circle:hover::after {
+.menu__chart-triangle:nth-child(6) .triangle__circle:hover::after {
     transition: 0ms;
     content: 'Цепочки';
     transform: rotate(300deg);

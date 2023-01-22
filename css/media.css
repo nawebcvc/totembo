@@ -11,6 +11,10 @@
         color: var(--white);
     }
 
+    .menu__chart-menu {
+        display: flex;
+    }
+
     .nav__menu {
         display: flex;
     }
