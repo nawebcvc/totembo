@@ -49,6 +49,16 @@ header {
     row-gap: 40px;
 }
 
+.title {
+    font-family: var(--montserrat-r);
+    font-size: 30px;
+    line-height: 37px;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--black);
+}
+
 .nav .container {
     display: flex;
     padding: 50px 20px 20px;
@@ -122,7 +132,7 @@ header {
     height: 100vh;
     width: 100%;
     z-index: -1;
-    transition: 500ms;
+    transition: .5s;
 }
 
 .nav__menu-chart {
@@ -152,7 +162,7 @@ header {
     top: 0;
     right: 0;
     margin-right: 10%;
-    transition: 500ms;
+    transition: .5s;
     z-index: 1;
 }
 
@@ -172,7 +182,7 @@ header {
 }
 
 .menu__chart-menu:focus~.nav__menu .nav__menu-chart .menu__chart-triangle {
-    transition: 500ms;
+    transition: .5s;
     transform-origin: center bottom;
     width: 0px;
     opacity: 1;
@@ -186,7 +196,7 @@ header {
     right: 0%;
     bottom: 50%;
     width: 170px;
-    transition: 500ms;
+    transition: .5s;
     margin: 0 auto;
     opacity: 0;
     z-index: -100;
@@ -203,7 +213,7 @@ header {
     z-index: -99;
     overflow: hidden;
     margin-left: 60px;
-    transition: 500ms;
+    transition: .5s;
 }
 
 .triangle__circle-link {
@@ -225,12 +235,12 @@ header {
     line-height: 24px;
     color: var(--card-bg);
     z-index: 100;
-    transition: 500ms;
+    transition: .5s;
 
 }
 
 .triangle__circle:hover {
-    transition: 500ms;
+    transition: .5s;
     background: var(--circle-hover);
     /* background: url(menu_product-bg4.png);
     4, 8 - красивый фон
@@ -295,8 +305,6 @@ header {
 
 .header__banner .container {
     display: grid;
-    /* grid-template-rows: 294px 294px;
-    grid-template-columns: 526px 746px; */
     grid-template: 294px 294px / 526px 746px;
     grid-template-areas: 'card1 card3'
         'card2 card3';
@@ -311,6 +319,8 @@ header {
     border-radius: 10px;
     filter: drop-shadow(6px 6px 15px rgba(132, 132, 132, 0.3));
     padding-left: 109px;
+    cursor: pointer;
+    transition: .5s ease-in-out;
 }
 
 .card::before {
@@ -326,6 +336,18 @@ header {
     padding: 11px 39px;
     background: var(--not-black);
     border-radius: 10px;
+}
+
+/* .card:hover {
+    transition: .5s ease-in-out;
+    border: 5px solid var(--card-bg);
+    background-color: #b5b1b100;
+    border-top-left-radius: 100% 20px;
+    border-bottom-right-radius: 100% 20px
+} первый вариант */
+
+.card:hover {
+    filter: drop-shadow(30px 30px 30px rgba(132, 132, 132, 0.3));
 }
 
 #card1 {
@@ -382,7 +404,7 @@ header {
     color: var(--black);
 }
 
-.card__content-number {
+.card__content-price {
     font-family: var(--montserrat-r);
     font-size: 16px;
     line-height: 19px;
@@ -396,9 +418,9 @@ header {
     line-height: 18px;
 }
 
-.card:nth-child(2) .card__content .card__content-number,
+.card:nth-child(2) .card__content .card__content-price,
 .card:nth-child(3) .card__content .card__content-desc,
-.card:nth-child(3) .card__content .card__content-number {
+.card:nth-child(3) .card__content .card__content-price {
     font-size: 15px;
     line-height: 17px;
 }
@@ -412,3 +434,131 @@ header {
     font-size: 22px;
     line-height: 17px;
 }
+
+.card__btns-img {
+    padding: 16px 16px;
+}
+
+.main__title:nth-child(1) {
+    padding-bottom: 20px;
+}
+
+.leader__cards .card .card__content .card__content-desc,
+.leader__cards .card .card__content .card__content-title {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.leader__cards .card .card__content .card__content-price {
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.leader__cards .card__img {
+    max-width: 200px;
+    width: 100%;
+}
+
+.leader__cards {
+    display: grid;
+    grid-template: repeat(4, 485px) / repeat(3, 416px);
+    justify-content: center;
+    column-gap: 24px;
+    row-gap: 40px;
+    padding-top: 40px;
+}
+
+.title-after::after, .title-before::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 1320px;
+    width: 100%;
+    height: 2px;
+    background: var(--black);
+    border-radius: 0.5px;
+}
+
+.leader__cards .card {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+    row-gap: 20px;
+    position: relative;
+}
+
+.card__btns {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+    position: absolute;
+    top: 20px;
+    right: 19px;
+    column-gap: 20px
+}
+
+.leader__cards .card .card__content {
+    display: grid;
+    row-gap: 20px;
+}
+
+.card__btns-img {
+    border-radius: 10px;
+    background: var(--white);
+}
+
+.leader__cards .card::before {
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.leader__cards .card:nth-child(1)::before {
+    content: 'new';
+}
+
+.leader__cards .card:nth-child(2)::before {
+    content: '15%';
+}
+
+.leader__cards .card:nth-child(3)::before,
+.leader__cards .card:nth-child(9)::before {
+    content: '30%';
+}
+
+.leader__cards .card:nth-child(4)::before,
+.leader__cards .card:nth-child(11)::before {
+    content: '10%';
+}
+
+.leader__cards .card:nth-child(5)::before,
+.leader__cards .card:nth-child(10)::before,
+.leader__cards .card:nth-child(12)::before {
+    content: unset;
+}
+
+.leader__cards .card:nth-child(6)::before {
+    content: unset;
+}
+
+.leader__cards .card:nth-child(7)::before {
+    content: '50%';
+}
+
+.leader__cards .card:nth-child(8)::before {
+    content: '20%';
+}
+
+.main__title-more h2 {
+    font-family: var(--montserrat-r);
+    font-size: 30px;
+    line-height: 37px;
+    color: var(--not-black);
+    text-align: center;
+    margin: 60px;
+}
+
