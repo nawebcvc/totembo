@@ -11,23 +11,47 @@
         padding: 0;
     }
 
-    .card::before {
+    .leaders__cards .card::before {
         left: unset;
         right: 22px;
     }
 
-    .leader__cards {
+    .leaders__cards {
         grid-template: repeat(4, 485px) / repeat(3, 284px);
     }
 
-    .leader__cards .card {
+    .leaders__cards .card {
         overflow: hidden;
     }
 
-    .leader__cards .card::before {
+    .leaders__cards .card::before {
         transform: rotate(90deg);
         top: 25px;
         right: 65%;
+    }
+
+    .news__cards {
+        grid-template-columns: minmax(200px, 550px) minmax(200px, 550px);
+        grid-template-rows: minmax(200px, 450px);
+        row-gap: 24px;
+    }
+
+    .news__cards .card {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .news__cards .card::before {
+        transform: none;
+        right: unset;
+    }
+    
+    .card__content-time {
+        align-self: start;
+    }
+
+    .news__cards .card .card__content .card__content-desc {
+        margin-bottom: 50px;
     }
 
 }
@@ -56,6 +80,11 @@
     .nav__logo-title h1 {
         margin: unset;
     }
+
+    .news__cards .card .card__content {
+        text-align: center;
+        margin: 70px 30px 30px;
+    }
 }
 
 @media(max-width: 992px) {
@@ -74,8 +103,13 @@
         column-gap: 10px;
     }
 
-    .leader__cards {
+    .leaders__cards {
         grid-template: repeat(6, 485px) / repeat(2, 350px);
+    }
+    
+    .news__cards {
+        grid-template-columns: minmax(500px, 600px);
+        grid-template-rows: repeat(2, 470px);
     }
 }
 
@@ -99,25 +133,25 @@
         font-size: 23px;
     }
 
-    .leader__cards {
+    .leaders__cards {
         grid-template-rows: repeat(12, 300px);
         grid-template-columns: minmax(230px, 500px);
     }
 
-    .leader__cards .card {
+    .leaders__cards .card {
         flex-direction: row;
         column-gap: 10px;
     } 
 
-     .leader__cards .card::before {
+     .leaders__cards .card::before {
         top: unset;
         bottom: unset;
         right: unset;
         margin-right: 423px;
-        padding: 11px 45px;
+        padding: 11px 33px;
     }
 
-    .leader__cards .card .card__btns {
+    .leaders__cards .card .card__btns {
         row-gap: 3px;
         top: unset;
         bottom: unset;
@@ -125,13 +159,13 @@
         left: unset;
     }
 
-    .leader__cards .card .card__img {
+    .leaders__cards .card .card__img {
         object-fit: contain;
         max-width: 146px;
         width: 100%;
     }
 
-    .leader__cards .card .card__content {
+    .leaders__cards .card .card__content {
         max-width: 200px;
     }
 }
@@ -162,15 +196,25 @@
         overflow: hidden;
     }
 
-    .card::before, .leader__cards .card::before {
+    .card::before, .leaders__cards .card::before {
         transform: rotate(90deg);
         top: 20px;
         right: 65%;
         overflow: hidden;
+        
     }
 
+    .card::before {
+        right: unset;
+        left: unset;
+        margin-right: 60%;
+    }
+
+    .leaders__cards {
+        grid-template-rows: repeat(12, 331px); 
+    }
     
-    .leader__cards .card {
+    .leaders__cards .card {
         flex-direction: column;
         justify-content: space-evenly;
         overflow: hidden;
@@ -178,7 +222,7 @@
         padding: 10px;
     }
 
-    .leader__cards .card::before {
+    .leaders__cards .card::before {
         left: unset;
         margin: 0;
     }
@@ -189,22 +233,42 @@
         margin-left: 65%;
     }
 
-    .leader__cards .card .card__content {
+    .leaders__cards .card .card__content {
         max-width: unset;
         row-gap: 18.39px;
     }
 
     .card__content-desc, .card__content-title, .card__content-price {
-        font-size: 16px !important;
-        line-height: 18px !important;
+        font-size: 16px;
+        line-height: 18px;
     }
 
-    .leader__cards .card::before {
+    .leaders__cards .card::before {
         left: unset !important;
         right: unset !important;
         margin-right: 65%;
     }
+    
+    .news__cards {
+        grid-template-columns: minmax(250px, 500px);
+        grid-template-rows: repeat(2, 550px);
+    }
 
+    .news__cards .card {
+        padding: 20px 0;
+    }
+
+    .news__cards .card .card__content {
+        margin: 56px 31px 17px; 
+    }
+
+    .news__cards .card .card__content .card__content-title, .news__cards .card .card__content .card__content-desc{
+        margin-bottom: 20px;
+    }
+
+    .card__content-time {
+        align-self: center;
+    }
 }
 
 @media(max-height: 500px) {
