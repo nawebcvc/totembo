@@ -10,6 +10,7 @@
     --chart-menu: #32323252;
     --circle-bg: #9b9b9b14;
     --circle-hover: #a3a3a385;
+    --link-hover: #ff0000;
     --banner-bg: linear-gradient(0deg, rgba(50, 50, 50, 0.7), rgba(50, 50, 50, 0.7));
     --montserrat-r: 'Montserrat_Regular';
     --montserrat-b: 'Montserrat_Bold';
@@ -77,7 +78,8 @@ header {
     border-radius: 0.5px;
 }
 
-.nav__logo-title h1 {
+.nav__logo-title h1,
+.logo-title h1 {
     margin-right: 50px;
     font-family: var(--montserrat-b);
     font-size: 32px;
@@ -90,7 +92,8 @@ header {
     display: flex;
 }
 
-.nav__link {
+.nav__link,
+.link, .contacts__adress, .contacts__number, .contacts__email {
     font-family: var(--montserrat-r);
     font-size: 18px;
     line-height: 22px;
@@ -100,7 +103,6 @@ header {
 
 .nav__links {
     margin: 0 42px 0 0;
-
 }
 
 .nav__links:nth-child(1) {
@@ -297,6 +299,14 @@ header {
     display: flex;
     margin-left: auto;
     column-gap: 40px;
+}
+
+.nav__btn:first-child {
+    font-family: var(--montserrat-r);
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: var(--not-black);
 }
 
 .header__banner {
@@ -561,9 +571,6 @@ header {
     margin: 60px;
 }
 
-/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
-/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
-/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 .news__cards {
     display: grid;
     grid-template: 470px / repeat(2, 636px);
@@ -582,12 +589,12 @@ header {
     background: linear-gradient(0deg, rgba(50, 50, 50, 0.7), rgba(50, 50, 50, 0.7));
     padding: 0;
     filter: unset;
-    background: url(../img/banner_1.png) no-repeat center / cover; 
+    background: url(../img/banner_1.png) no-repeat center / cover;
     position: relative;
 }
 
 .news__cards .card:nth-child(2) {
-    background: url(../img/banner_2.png) no-repeat center / cover; 
+    background: url(../img/banner_2.png) no-repeat center / cover;
 }
 
 .news__cards .card:hover {
@@ -635,7 +642,7 @@ header {
     font-size: 18px;
     line-height: 22px;
     font-variant: small-caps;
-    color: var(--card-bg); 
+    color: var(--card-bg);
     margin-bottom: 100px;
 }
 
@@ -651,6 +658,74 @@ header {
     text-transform: uppercase;
     color: var(--white);
 }
-/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
-/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
-/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+footer {
+    background: var(--not-black);
+}
+
+footer .container {
+    display: flex;
+    align-items: flex-start;
+    padding: 100px 20px 87px;
+}
+
+.footer__service {
+    margin-right: 160px;
+}
+
+.logo-title h1, .products__title, .contacts__title, .social__title {
+    margin: 0 0 40px 0;
+    color: var(--white);
+}
+
+.footer__products {
+    margin-right: 217px;
+}
+
+.links, .contacts__box, .social__box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.link {
+    color: var(--white);
+    transition: 500ms;
+}
+
+.link:hover {
+    color: var(--link-hover);
+}
+
+.contacts__number-box {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+}
+
+.contacts__adress, .contacts__number, .contacts__email {
+    font-variant: small-caps;
+    text-transform: unset;
+    color: var(--white);
+    user-select: all;
+}
+
+.products__title, .contacts__title, .social__title {
+    font-family: var(--montserrat-r);
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+.contacts__social {
+    margin-top: 60px;
+}
+
+.social__box {
+    display: flex;
+    align-items: start;
+    flex-direction: row;
+    column-gap: 26px;
+}
