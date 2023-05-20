@@ -244,9 +244,6 @@ header {
 .triangle__circle:hover {
     transition: .5s;
     background: var(--circle-hover);
-    /* background: url(menu_product-bg4.png);
-    4, 8 - красивый фон
-    к сожалению transition не работает при background-image */
 }
 
 .menu__chart-triangle:nth-child(1) .triangle__circle:hover::after {
@@ -347,14 +344,6 @@ header {
     background: var(--not-black);
     border-radius: 10px;
 }
-
-/* .card:hover {
-    transition: .5s ease-in-out;
-    border: 5px solid var(--card-bg);
-    background-color: #b5b1b100;
-    border-top-left-radius: 100% 20px;
-    border-bottom-right-radius: 100% 20px
-} первый вариант */
 
 .card:hover {
     filter: drop-shadow(30px 30px 30px rgba(132, 132, 132, 0.3));
@@ -577,7 +566,6 @@ header {
     justify-content: center;
     column-gap: 24px;
     padding-top: 40px;
-    /* overflow-x: scroll; */
 }
 
 .title-before {
